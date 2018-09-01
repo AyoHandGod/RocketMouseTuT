@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50869227135085162}
   - component: {fileID: 114832839425499632}
   - component: {fileID: 95148963967936364}
-  - component: {fileID: 114389172429682216}
+  - component: {fileID: 114827099721138620}
   m_Layer: 0
   m_Name: Mouse
   m_TagString: Untagged
@@ -49,6 +49,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1766873328797308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4658230937677932}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4148617252690018
 Transform:
   m_ObjectHideFlags: 1
@@ -60,6 +75,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4413059802625030}
+  - {fileID: 4658230937677932}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -76,6 +92,19 @@ Transform:
   m_Father: {fileID: 4148617252690018}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 65, y: 270, z: 270}
+--- !u!4 &4658230937677932
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1766873328797308}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4148617252690018}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50869227135085162
 Rigidbody2D:
   serializedVersion: 4
@@ -129,7 +158,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114389172429682216
+--- !u!114 &114827099721138620
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,13 +170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableRooms:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1276903027761214, guid: cf345fcabf751f34c8d89eca2e05f51e, type: 2}
   currentRooms:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!114 &114832839425499632
@@ -163,6 +187,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jetpackForce: 75
   forwardMovementSpeed: 3
+  groundCheckTransform: {fileID: 4658230937677932}
+  groundCheckLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!198 &198387366838508514
 ParticleSystem:
   m_ObjectHideFlags: 1
