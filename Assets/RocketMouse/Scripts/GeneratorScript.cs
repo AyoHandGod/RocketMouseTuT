@@ -25,8 +25,9 @@ public class GeneratorScript : MonoBehaviour {
     {
         int randomRoomIndex = Random.Range(0, availableRooms.Length); // grabs the index of a random room piece
         GameObject room = (GameObject)Instantiate(availableRooms[randomRoomIndex]);  // instantiates a random room object
-        float roomWidth = room.transform.Find("floor").localScale.x;   // get the size of the room inside the room, as the room is an 
+        float roomWidth = room.transform.Find("Floor").localScale.x;   // get the size of the room inside the room, as the room is an 
                                                                        // empyt GameObject we can't grab from it. 
+                                                                       // Be sure to set the "find" parameter to the name you've set for your Floor object in game
 
         float roomCenter = farthestRoomEndX + roomWidth * 0.5f;        // takes the furthest edge of the level add half the new rooms width,
                                                                        // this starts new room exactly at end of previous
@@ -47,7 +48,7 @@ public class GeneratorScript : MonoBehaviour {
         foreach (var room in currentRooms)
         {
             // Use the floor to calculate the roomStart and roomEnd x positions
-            float roomWidth = room.transform.Find("floor").localScale.x;
+            float roomWidth = room.transform.Find("Floor").localScale.x;
             float roomStartX = room.transform.position.x - (roomWidth * 0.5f);
             float roomEndX = roomStartX + roomWidth;
 
@@ -67,7 +68,9 @@ public class GeneratorScript : MonoBehaviour {
         foreach (var room in roomsToRemove)
         {
             currentRooms.Remove(room); // removes room from list of rooms
+           
             Destroy(room);             // Destroys the room object that has been removed
+          
         }
 
         if (addRooms) // checks if additional room needed and adds it. 
@@ -81,8 +84,10 @@ public class GeneratorScript : MonoBehaviour {
     {
         while (true)
         {
+            
             GenerateRoomIfRequired();
             yield return new WaitForSeconds(0.25f); // adds a pause in execution to minimize resource req. due to list use
+      
         }
     }
 }
