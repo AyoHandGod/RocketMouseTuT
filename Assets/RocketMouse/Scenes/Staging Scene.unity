@@ -118,6 +118,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1002654009412144, guid: d60d92286d6771346bdec8e3cbcf4038,
     type: 2}
   m_PrefabInternal: {fileID: 1915918773}
+--- !u!198 &245602045 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198387366838508514, guid: d60d92286d6771346bdec8e3cbcf4038,
+    type: 2}
+  m_PrefabInternal: {fileID: 1915918773}
 --- !u!1001 &1272070661
 Prefab:
   m_ObjectHideFlags: 0
@@ -265,6 +270,11 @@ Prefab:
       propertyPath: currentRooms.Array.data[1]
       value: 
       objectReference: {fileID: 1535600885}
+    - target: {fileID: 114832839425499632, guid: d60d92286d6771346bdec8e3cbcf4038,
+        type: 2}
+      propertyPath: jetpack
+      value: 
+      objectReference: {fileID: 245602045}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d60d92286d6771346bdec8e3cbcf4038, type: 2}
   m_IsPrefabAsset: 0

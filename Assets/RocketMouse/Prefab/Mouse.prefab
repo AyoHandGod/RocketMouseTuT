@@ -187,6 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jetpackForce: 75
   forwardMovementSpeed: 3
+  jetpack: {fileID: 198387366838508514}
   groundCheckTransform: {fileID: 4658230937677932}
   groundCheckLayerMask:
     serializedVersion: 2
