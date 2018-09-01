@@ -117,10 +117,10 @@ TextureImporter:
       name: mouse_sprite_sheet_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 160
-        width: 127
-        height: 144
+        x: 0
+        y: 156
+        width: 162
+        height: 156
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,7 +128,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 397d0f7e6453ecd4c80184feac5972b4
+      spriteID: b92b5dd654a0d97438f3dee73e08d5c5
       vertices: []
       indices: 
       edges: []
@@ -137,10 +137,10 @@ TextureImporter:
       name: mouse_sprite_sheet_1
       rect:
         serializedVersion: 2
-        x: 164
-        y: 158
-        width: 126
-        height: 150
+        x: 162
+        y: 156
+        width: 162
+        height: 156
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,7 +148,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d30dc2fb479c6c542acf8db9e359faa6
+      spriteID: 20610f463d72eeb4e8918f62542af698
       vertices: []
       indices: 
       edges: []
@@ -157,10 +157,10 @@ TextureImporter:
       name: mouse_sprite_sheet_2
       rect:
         serializedVersion: 2
-        x: 327
-        y: 161
-        width: 125
-        height: 143
+        x: 324
+        y: 156
+        width: 162
+        height: 156
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,7 +168,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d32bd80d9132d95468ec894a033eb33b
+      spriteID: eeeb8c6c028f4b647ad17c1ae6d956f3
       vertices: []
       indices: 
       edges: []
@@ -177,10 +177,10 @@ TextureImporter:
       name: mouse_sprite_sheet_3
       rect:
         serializedVersion: 2
-        x: 488
-        y: 160
-        width: 126
-        height: 148
+        x: 486
+        y: 156
+        width: 162
+        height: 156
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,7 +188,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47041ba4e78bf4b47b795d85b1d8a08a
+      spriteID: 95bcc0a7cfd134647baa4782b1df31c8
       vertices: []
       indices: 
       edges: []
@@ -197,10 +197,10 @@ TextureImporter:
       name: mouse_sprite_sheet_4
       rect:
         serializedVersion: 2
-        x: 3
-        y: 7
-        width: 132
-        height: 142
+        x: 0
+        y: 0
+        width: 162
+        height: 156
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,7 +208,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f402986bdc6634144ba89f69b16bf006
+      spriteID: b1f57d8418817ea4fb451fbb082e52cc
       vertices: []
       indices: 
       edges: []
@@ -217,10 +217,10 @@ TextureImporter:
       name: mouse_sprite_sheet_5
       rect:
         serializedVersion: 2
-        x: 169
-        y: 22
-        width: 131
-        height: 127
+        x: 162
+        y: 0
+        width: 162
+        height: 156
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,7 +228,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8339c5a3d46660949bc1ce5df8d003fd
+      spriteID: e67e7fb19d9a1034991a8c690ffd34d4
       vertices: []
       indices: 
       edges: []
@@ -237,10 +237,10 @@ TextureImporter:
       name: mouse_sprite_sheet_6
       rect:
         serializedVersion: 2
-        x: 332
-        y: 5
-        width: 139
-        height: 139
+        x: 324
+        y: 0
+        width: 162
+        height: 156
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,7 +248,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7268f3fbe8e302a46b69e25682942c8e
+      spriteID: bc2369d977797bc4e9a5ca826e050d40
       vertices: []
       indices: 
       edges: []
@@ -257,10 +257,10 @@ TextureImporter:
       name: mouse_sprite_sheet_7
       rect:
         serializedVersion: 2
-        x: 488
-        y: 4
-        width: 158
-        height: 99
+        x: 486
+        y: 0
+        width: 162
+        height: 156
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,7 +268,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c53cd7acea757804787b7e546ef90e0a
+      spriteID: 16f92e90d7a1b9543a59d6c525a6140d
       vertices: []
       indices: 
       edges: []
