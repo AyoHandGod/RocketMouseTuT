@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;  // import UI classes
 
 public class MouseController : MonoBehaviour {
 
@@ -10,7 +11,8 @@ public class MouseController : MonoBehaviour {
     public ParticleSystem jetpack;       // our jetpack particle system
     public Transform groundCheckTransform;     // groundCheck child object we will be using
     public LayerMask groundCheckLayerMask;     // Layer Mask of the layer we wish to check collision with
-    
+    public Text coinsCollectedLabel;  // use the 'Text' class from UnityEngine.UI. This will hold the value of collected coins
+
     // Private Fields
     private Rigidbody2D rb;         // rigidbody 
     private bool isGrounded;       // is groundCheck touching the floor?
@@ -100,7 +102,8 @@ public class MouseController : MonoBehaviour {
     void CollectCoin(Collider2D coinCollider)
     {
         coins++;
+        coinsCollectedLabel.text = coins.ToString();  // applies the values of coins to our text ui element
         Destroy(coinCollider.gameObject);
-            
+        
     }
 }
