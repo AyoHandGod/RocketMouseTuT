@@ -15,6 +15,12 @@ public class MouseController : MonoBehaviour {
     public Text coinsCollectedLabel;  // use the 'Text' class from UnityEngine.UI. This will hold the value of collected coins
     public Button restartButton;      // button we will use for restarting game
 
+    // audio fields
+    public AudioClip coinCollectSound;   // variable for the audio for coin collection
+    public AudioSource jetpackAudio;     // jetpack AudioSource
+    public AudioSource footstepsAudio;   // footstep audio
+
+
     // Private Fields
     private Rigidbody2D rb;         // rigidbody 
     private bool isGrounded;       // is groundCheck touching the floor?
@@ -60,6 +66,8 @@ public class MouseController : MonoBehaviour {
         {
             restartButton.gameObject.SetActive(true);
         }
+
+        AdjustFootstepsAndJetpackSound(jetpackActive);  // run adjusted sound function
     }
 
     void UpdateGroundedStatus()
@@ -102,6 +110,11 @@ public class MouseController : MonoBehaviour {
     // Changes mouse to dead and set animator bool if function called
     void HitByLaser(Collider2D laserCollider)
     {
+        if (!isDead)
+        {
+            AudioSource lazerZap = laserCollider.gameObject.GetComponent<AudioSource>(); // grab audio source component
+            lazerZap.Play(); // play the sound effect
+        }
         isDead = true;
         animator.SetBool("isDead", true);
     }
@@ -112,6 +125,25 @@ public class MouseController : MonoBehaviour {
         coins++;
         coinsCollectedLabel.text = coins.ToString();  // applies the values of coins to our text ui element
         Destroy(coinCollider.gameObject);
+        AudioSource.PlayClipAtPoint(coinCollectSound, transform.position); // Plays audio at the source of collection
+
+    }
+
+    // audio play function to adjust footstep or jetpack sound depending on whether flying or walking
+    void AdjustFootstepsAndJetpackSound(bool jetpackActive)
+    {
+        footstepsAudio.enabled = !isDead && isGrounded;  // enable footsteps audio if not dead and on ground
+        jetpackAudio.enabled = !isDead && !isGrounded;   // enable jetpack sound if not dead and not grounded
+
+        // adjust the jetpack volume
+        if (jetpackActive)
+        {
+            jetpackAudio.volume = 1.0f;
+        }
+        else
+        {
+            jetpackAudio.volume = 0.5f;
+        }
 
     }
 
