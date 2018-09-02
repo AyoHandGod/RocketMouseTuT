@@ -7,11 +7,19 @@ using UnityEngine.SceneManagement; // Import Unity Scene management
 public class MouseController : MonoBehaviour {
 
     // Public Fields
+    
+    // movement values
     public float jetpackForce = 75f;  // force applied to mouse when jet pack is on
     public float forwardMovementSpeed = 3.0f;  // forward movement force
+
+    // particle system
     public ParticleSystem jetpack;       // our jetpack particle system
+
+    // collision variables
     public Transform groundCheckTransform;     // groundCheck child object we will be using
     public LayerMask groundCheckLayerMask;     // Layer Mask of the layer we wish to check collision with
+
+    // UI elements
     public Text coinsCollectedLabel;  // use the 'Text' class from UnityEngine.UI. This will hold the value of collected coins
     public Button restartButton;      // button we will use for restarting game
 
@@ -19,6 +27,9 @@ public class MouseController : MonoBehaviour {
     public AudioClip coinCollectSound;   // variable for the audio for coin collection
     public AudioSource jetpackAudio;     // jetpack AudioSource
     public AudioSource footstepsAudio;   // footstep audio
+
+    // parallax variable
+    public ParallaxScroll parallax;
 
 
     // Private Fields
@@ -68,6 +79,7 @@ public class MouseController : MonoBehaviour {
         }
 
         AdjustFootstepsAndJetpackSound(jetpackActive);  // run adjusted sound function
+        parallax.offset = transform.position.x;        // adjust parallax offsets
     }
 
     void UpdateGroundedStatus()
