@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;  // import UI classes
+using UnityEngine.SceneManagement; // Import Unity Scene management
 
 public class MouseController : MonoBehaviour {
 
@@ -12,6 +13,7 @@ public class MouseController : MonoBehaviour {
     public Transform groundCheckTransform;     // groundCheck child object we will be using
     public LayerMask groundCheckLayerMask;     // Layer Mask of the layer we wish to check collision with
     public Text coinsCollectedLabel;  // use the 'Text' class from UnityEngine.UI. This will hold the value of collected coins
+    public Button restartButton;      // button we will use for restarting game
 
     // Private Fields
     private Rigidbody2D rb;         // rigidbody 
@@ -20,16 +22,16 @@ public class MouseController : MonoBehaviour {
     private bool isDead = false;   // boolean to check whether mouse is dead or not
     private uint coins = 0;        // holds the amount of collected coins
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start() {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>(); // get the rigidbody component of the object script is applied to
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    }
+
+    // Update is called once per frame
+    void Update() {
+
+    }
 
     // use fixedUpdate to check for input constantly
     private void FixedUpdate()
@@ -51,7 +53,13 @@ public class MouseController : MonoBehaviour {
         }
 
         UpdateGroundedStatus();    // calls updatedGroundedStatus check function
-        AdjustJetpack(jetpackActive);   // Adjust display of jetpack emissions 
+        AdjustJetpack(jetpackActive);   // Adjust display of jetpack emissions
+
+        // if player is dead and on ground, activate restart button
+        if (isDead && isGrounded)
+        {
+            restartButton.gameObject.SetActive(true);
+        }
     }
 
     void UpdateGroundedStatus()
@@ -104,6 +112,11 @@ public class MouseController : MonoBehaviour {
         coins++;
         coinsCollectedLabel.text = coins.ToString();  // applies the values of coins to our text ui element
         Destroy(coinCollider.gameObject);
-        
+
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("Staging Scene");
     }
 }
